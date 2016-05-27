@@ -21,7 +21,7 @@ setup(name="eep",
       include_package_data=True,
       install_requires=install_requires,
       license="MIT",
-      keywords="eep",
+      keywords="eep string search replace",
       packages=find_packages(exclude=["docs", "tests*"]),
       setup_requires=["pytest-runner"],
       tests_require=["pytest"])
