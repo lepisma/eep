@@ -14,12 +14,15 @@ develop-eggs
 lib
 lib64
 dist
+.eggs
+.cache
 
 # Installer logs
 pip-log.txt
 
 # Scrabbles
 notebook
+*.org
 
 # Unit test / coverage reports
 .coverage

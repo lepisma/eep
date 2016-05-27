@@ -1,25 +1,40 @@
-#!/usr/bin/env python
-
-
 """
 test_eep
 ----------------------------------
 Tests for `eep` module.
 """
 
-import unittest
-import sys
-from eep import eep
+import eep
 
 
-class TestEep(unittest.TestCase):
-
-    def t1(self):
-        pass
-
-    def t2(self):
-        pass
+def test_string_output():
+    assert "str" == eep.Searcher("str").text
 
 
-if __name__ == "__main__":
-    sys.exit(unittest.main())
+def test_insert():
+    es = eep.Searcher("test string")
+    es.insert("four")
+    assert es.point == 4
+
+
+def test_replace():
+    es = eep.Searcher("test string with extra words")
+    es.replace("first words ")
+    assert es.point == 12
+
+
+def test_forward_search():
+    es = eep.Searcher("test string with test word and another test word")
+    es.search_forward("test")
+    es.search_forward("test")
+
+    assert (es.point == 21) and (es.mark == 17)
+
+
+def test_backward_search():
+    es = eep.Searcher("test string with test word and another test word")
+    es.goto("end")
+    es.search_backward("test")
+    es.search_backward("test")
+
+    assert (es.point == 17) and (es.mark == 21)

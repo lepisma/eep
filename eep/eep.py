@@ -1,11 +1,11 @@
 """
-Eep string search and replace module
+eep string search and replace module
 """
 
 
-class Eep(object):
+class Searcher(object):
     """
-    Eep class
+    Main searcher class
     """
 
     def __init__(self, text):
