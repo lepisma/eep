@@ -11,7 +11,7 @@ with open("requirements.txt") as requirements_file:
 install_requires = [x.strip() for x in requirements]
 
 setup(name="eep",
-      version="0.1.0",
+      version="0.1.1",
       description=
       "Emacs style, point based string search-replace library for python",
       long_description=readme,
