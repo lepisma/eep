@@ -67,7 +67,6 @@ class Searcher(object):
         """
 
         swapped = False
-        region = [self.mark, self.point]
         if self.mark > self.point:
             self.swap_markers()
             swapped = True
