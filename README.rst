@@ -1,6 +1,9 @@
 eep
 ===
 
+.. image:: https://badge.fury.io/py/eep.png
+    :target: https://badge.fury.io/py/eep
+
 Emacs style, point based search-replace for python.
 
 It works by moving a ``point`` and a ``mark`` around in the text,
