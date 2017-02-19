@@ -24,6 +24,22 @@ class Searcher(object):
 
         return self.text
 
+
+    def get_sub(self):
+        """
+        Return substring represented by current mark and point
+        """
+
+        swapped = False
+        if self.mark > self.point:
+            self.swap_markers()
+            swapped = True
+
+        sub = self.text[self.mark:self.point]
+        if swapped:
+            self.swap_markers()
+        return sub
+
     def jump(self, chars):
         """
         Jump point with given number of chars (+ve/-ve)
@@ -56,9 +72,7 @@ class Searcher(object):
         Swap mark and point
         """
 
-        tmp = self.mark
-        self.mark = self.point
-        self.point = tmp
+        self.mark, self.point = self.point, self.mark
 
     def replace(self, replacement):
         """
