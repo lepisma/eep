@@ -25,10 +25,16 @@ class Searcher(object):
         return self.text
 
 
-    def get_sub(self):
+    def get_sub(self, end=None):
         """
         Return substring represented by current mark and point
         """
+
+        if end:
+            if self.mark <= end:
+                return self.text[self.mark:end]
+            else:
+                return self.text[end:self.mark]
 
         swapped = False
         if self.mark > self.point:
@@ -36,6 +42,7 @@ class Searcher(object):
             swapped = True
 
         sub = self.text[self.mark:self.point]
+
         if swapped:
             self.swap_markers()
         return sub
