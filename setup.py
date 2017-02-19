@@ -6,7 +6,7 @@ with open("README.rst") as readme_file:
     readme = readme_file.read()
 
 setup(name="eep",
-      version="0.1.2",
+      version="0.1.3",
       description=
       "Emacs style, point based string search-replace library for python",
       long_description=readme,
